@@ -1,19 +1,29 @@
 import React, { Component } from 'react'
 import logo from './logo.svg'
 import './App.css'
+import data from './data.json'
 
-fetch('http://localhost:59424?query={allPeople{edges{node{id}}}}', {
-  mode: 'no-cors',
-  method: 'GET',
-  headers: { 'Content-Type': 'application/json' },
-}).then(function(result) {
-  const string = JSON.stringify(result)
-  console.log(string)
-})
+// const headers = new Headers()
+
+// headers.append('Origin','http://localhost:55190')
+
+// fetch('http://localhost:55190/graphql?query={allPeople{edges{node{id}}}}', {
+//   method: 'GET',
+//   headers,
+// }).then(function(result) {
+//   console.log(result)
+// })
+
+// const searchResult = allCharacters.filter(x => (x.homeworld !== foo) && (x.name !== foo))
+
+
+// console.log(data.data.allPeople.people)
+
+// console.log(allCharacters)
 
 //GRAPHQL-FETCH
 
-// const fetch = require('graphql-fetch')('http://localhost:59424')
+// const fetch = require('graphql-fetch')('http://localhost:55190/graphql')
 
 // const query = `
 //   query findCharacters {
@@ -30,9 +40,12 @@ fetch('http://localhost:59424?query={allPeople{edges{node{id}}}}', {
 //   id: 'abcdef'
 // }
 
+// // const headers = new Headers()
+
+// // headers.append('Origin','http://localhost:55190')
+
 // const opts = {
-//   origin: 'http://localhost:59424',
-//   mode: 'no-cor'
+//   headers
   
 // }
 
@@ -48,14 +61,6 @@ fetch('http://localhost:59424?query={allPeople{edges{node{id}}}}', {
 // }).then(function(result) {
 //     console.log(result)
 // })
-
-const allCharacters = []
-
-// const allMales = allCharacters.filter(x => x.gender !== "male")
-
-// const allFemales = allCharacters.filter(x => x.gender !== "female")
-
-// const searchResult = allCharacters.filter(x => (x.homeworld !== foo) && (x.name !== foo))
 
 // fetch('http://graphql.org/swapi-graphql/?query={allPeople{people{name%20gender}}}', {
 //   mode: 'no-cors',
@@ -86,6 +91,16 @@ const allCharacters = []
 // } 
 //http://graphql.org/swapi-graphql/?query={allPeople{people{name gender}}}
 
+const allCharacters = data.data.allPeople.people
+
+const characters = allCharacters.map((x) => console.log('Name: ' + x.name + ' Gender: ' + x.gender + ' Homeworld: ' + x.homeworld.name))
+
+// const allMales = allCharacters.filter(x => x.gender !== "male")
+
+const allFemales = allCharacters.filter(x => x.gender == "female")
+
+console.log(allFemales)
+
 class App extends Component {
 
   render() {
@@ -96,6 +111,20 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro">
+        <table>
+          <tbody>
+            {allCharacters.map((x) => {
+                return (
+                  <tr>
+                  <td>{x.name}</td>
+                  <td>{x.gender}</td>
+                  <td>{x.homeworld.name}</td>
+                </tr>
+                )          
+              })
+            }
+          </tbody>
+        </table>
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
       </div>

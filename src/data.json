@@ -1,0 +1,582 @@
+{
+    "data": {
+      "allPeople": {
+        "people": [
+          {
+            "name": "Luke Skywalker",
+            "gender": "male",
+            "homeworld": {
+              "name": "Tatooine"
+            }
+          },
+          {
+            "name": "C-3PO",
+            "gender": "n/a",
+            "homeworld": {
+              "name": "Tatooine"
+            }
+          },
+          {
+            "name": "R2-D2",
+            "gender": "n/a",
+            "homeworld": {
+              "name": "Naboo"
+            }
+          },
+          {
+            "name": "Darth Vader",
+            "gender": "male",
+            "homeworld": {
+              "name": "Tatooine"
+            }
+          },
+          {
+            "name": "Leia Organa",
+            "gender": "female",
+            "homeworld": {
+              "name": "Alderaan"
+            }
+          },
+          {
+            "name": "Owen Lars",
+            "gender": "male",
+            "homeworld": {
+              "name": "Tatooine"
+            }
+          },
+          {
+            "name": "Beru Whitesun lars",
+            "gender": "female",
+            "homeworld": {
+              "name": "Tatooine"
+            }
+          },
+          {
+            "name": "R5-D4",
+            "gender": "n/a",
+            "homeworld": {
+              "name": "Tatooine"
+            }
+          },
+          {
+            "name": "Biggs Darklighter",
+            "gender": "male",
+            "homeworld": {
+              "name": "Tatooine"
+            }
+          },
+          {
+            "name": "Obi-Wan Kenobi",
+            "gender": "male",
+            "homeworld": {
+              "name": "Stewjon"
+            }
+          },
+          {
+            "name": "Anakin Skywalker",
+            "gender": "male",
+            "homeworld": {
+              "name": "Tatooine"
+            }
+          },
+          {
+            "name": "Wilhuff Tarkin",
+            "gender": "male",
+            "homeworld": {
+              "name": "Eriadu"
+            }
+          },
+          {
+            "name": "Chewbacca",
+            "gender": "male",
+            "homeworld": {
+              "name": "Kashyyyk"
+            }
+          },
+          {
+            "name": "Han Solo",
+            "gender": "male",
+            "homeworld": {
+              "name": "Corellia"
+            }
+          },
+          {
+            "name": "Greedo",
+            "gender": "male",
+            "homeworld": {
+              "name": "Rodia"
+            }
+          },
+          {
+            "name": "Jabba Desilijic Tiure",
+            "gender": "hermaphrodite",
+            "homeworld": {
+              "name": "Nal Hutta"
+            }
+          },
+          {
+            "name": "Wedge Antilles",
+            "gender": "male",
+            "homeworld": {
+              "name": "Corellia"
+            }
+          },
+          {
+            "name": "Jek Tono Porkins",
+            "gender": "male",
+            "homeworld": {
+              "name": "Bestine IV"
+            }
+          },
+          {
+            "name": "Yoda",
+            "gender": "male",
+            "homeworld": {
+              "name": "unknown"
+            }
+          },
+          {
+            "name": "Palpatine",
+            "gender": "male",
+            "homeworld": {
+              "name": "Naboo"
+            }
+          },
+          {
+            "name": "Boba Fett",
+            "gender": "male",
+            "homeworld": {
+              "name": "Kamino"
+            }
+          },
+          {
+            "name": "IG-88",
+            "gender": "none",
+            "homeworld": {
+              "name": "unknown"
+            }
+          },
+          {
+            "name": "Bossk",
+            "gender": "male",
+            "homeworld": {
+              "name": "Trandosha"
+            }
+          },
+          {
+            "name": "Lando Calrissian",
+            "gender": "male",
+            "homeworld": {
+              "name": "Socorro"
+            }
+          },
+          {
+            "name": "Lobot",
+            "gender": "male",
+            "homeworld": {
+              "name": "Bespin"
+            }
+          },
+          {
+            "name": "Ackbar",
+            "gender": "male",
+            "homeworld": {
+              "name": "Mon Cala"
+            }
+          },
+          {
+            "name": "Mon Mothma",
+            "gender": "female",
+            "homeworld": {
+              "name": "Chandrila"
+            }
+          },
+          {
+            "name": "Arvel Crynyd",
+            "gender": "male",
+            "homeworld": {
+              "name": "unknown"
+            }
+          },
+          {
+            "name": "Wicket Systri Warrick",
+            "gender": "male",
+            "homeworld": {
+              "name": "Endor"
+            }
+          },
+          {
+            "name": "Nien Nunb",
+            "gender": "male",
+            "homeworld": {
+              "name": "Sullust"
+            }
+          },
+          {
+            "name": "Qui-Gon Jinn",
+            "gender": "male",
+            "homeworld": {
+              "name": "unknown"
+            }
+          },
+          {
+            "name": "Nute Gunray",
+            "gender": "male",
+            "homeworld": {
+              "name": "Cato Neimoidia"
+            }
+          },
+          {
+            "name": "Finis Valorum",
+            "gender": "male",
+            "homeworld": {
+              "name": "Coruscant"
+            }
+          },
+          {
+            "name": "Padmé Amidala",
+            "gender": "female",
+            "homeworld": {
+              "name": "Naboo"
+            }
+          },
+          {
+            "name": "Jar Jar Binks",
+            "gender": "male",
+            "homeworld": {
+              "name": "Naboo"
+            }
+          },
+          {
+            "name": "Roos Tarpals",
+            "gender": "male",
+            "homeworld": {
+              "name": "Naboo"
+            }
+          },
+          {
+            "name": "Rugor Nass",
+            "gender": "male",
+            "homeworld": {
+              "name": "Naboo"
+            }
+          },
+          {
+            "name": "Ric Olié",
+            "gender": "male",
+            "homeworld": {
+              "name": "Naboo"
+            }
+          },
+          {
+            "name": "Watto",
+            "gender": "male",
+            "homeworld": {
+              "name": "Toydaria"
+            }
+          },
+          {
+            "name": "Sebulba",
+            "gender": "male",
+            "homeworld": {
+              "name": "Malastare"
+            }
+          },
+          {
+            "name": "Quarsh Panaka",
+            "gender": "male",
+            "homeworld": {
+              "name": "Naboo"
+            }
+          },
+          {
+            "name": "Shmi Skywalker",
+            "gender": "female",
+            "homeworld": {
+              "name": "Tatooine"
+            }
+          },
+          {
+            "name": "Darth Maul",
+            "gender": "male",
+            "homeworld": {
+              "name": "Dathomir"
+            }
+          },
+          {
+            "name": "Bib Fortuna",
+            "gender": "male",
+            "homeworld": {
+              "name": "Ryloth"
+            }
+          },
+          {
+            "name": "Ayla Secura",
+            "gender": "female",
+            "homeworld": {
+              "name": "Ryloth"
+            }
+          },
+          {
+            "name": "Ratts Tyerel",
+            "gender": "male",
+            "homeworld": {
+              "name": "Aleen Minor"
+            }
+          },
+          {
+            "name": "Dud Bolt",
+            "gender": "male",
+            "homeworld": {
+              "name": "Vulpter"
+            }
+          },
+          {
+            "name": "Gasgano",
+            "gender": "male",
+            "homeworld": {
+              "name": "Troiken"
+            }
+          },
+          {
+            "name": "Ben Quadinaros",
+            "gender": "male",
+            "homeworld": {
+              "name": "Tund"
+            }
+          },
+          {
+            "name": "Mace Windu",
+            "gender": "male",
+            "homeworld": {
+              "name": "Haruun Kal"
+            }
+          },
+          {
+            "name": "Ki-Adi-Mundi",
+            "gender": "male",
+            "homeworld": {
+              "name": "Cerea"
+            }
+          },
+          {
+            "name": "Kit Fisto",
+            "gender": "male",
+            "homeworld": {
+              "name": "Glee Anselm"
+            }
+          },
+          {
+            "name": "Eeth Koth",
+            "gender": "male",
+            "homeworld": {
+              "name": "Iridonia"
+            }
+          },
+          {
+            "name": "Adi Gallia",
+            "gender": "female",
+            "homeworld": {
+              "name": "Coruscant"
+            }
+          },
+          {
+            "name": "Saesee Tiin",
+            "gender": "male",
+            "homeworld": {
+              "name": "Iktotch"
+            }
+          },
+          {
+            "name": "Yarael Poof",
+            "gender": "male",
+            "homeworld": {
+              "name": "Quermia"
+            }
+          },
+          {
+            "name": "Plo Koon",
+            "gender": "male",
+            "homeworld": {
+              "name": "Dorin"
+            }
+          },
+          {
+            "name": "Mas Amedda",
+            "gender": "male",
+            "homeworld": {
+              "name": "Champala"
+            }
+          },
+          {
+            "name": "Gregar Typho",
+            "gender": "male",
+            "homeworld": {
+              "name": "Naboo"
+            }
+          },
+          {
+            "name": "Cordé",
+            "gender": "female",
+            "homeworld": {
+              "name": "Naboo"
+            }
+          },
+          {
+            "name": "Cliegg Lars",
+            "gender": "male",
+            "homeworld": {
+              "name": "Tatooine"
+            }
+          },
+          {
+            "name": "Poggle the Lesser",
+            "gender": "male",
+            "homeworld": {
+              "name": "Geonosis"
+            }
+          },
+          {
+            "name": "Luminara Unduli",
+            "gender": "female",
+            "homeworld": {
+              "name": "Mirial"
+            }
+          },
+          {
+            "name": "Barriss Offee",
+            "gender": "female",
+            "homeworld": {
+              "name": "Mirial"
+            }
+          },
+          {
+            "name": "Dormé",
+            "gender": "female",
+            "homeworld": {
+              "name": "Naboo"
+            }
+          },
+          {
+            "name": "Dooku",
+            "gender": "male",
+            "homeworld": {
+              "name": "Serenno"
+            }
+          },
+          {
+            "name": "Bail Prestor Organa",
+            "gender": "male",
+            "homeworld": {
+              "name": "Alderaan"
+            }
+          },
+          {
+            "name": "Jango Fett",
+            "gender": "male",
+            "homeworld": {
+              "name": "Concord Dawn"
+            }
+          },
+          {
+            "name": "Zam Wesell",
+            "gender": "female",
+            "homeworld": {
+              "name": "Zolan"
+            }
+          },
+          {
+            "name": "Dexter Jettster",
+            "gender": "male",
+            "homeworld": {
+              "name": "Ojom"
+            }
+          },
+          {
+            "name": "Lama Su",
+            "gender": "male",
+            "homeworld": {
+              "name": "Kamino"
+            }
+          },
+          {
+            "name": "Taun We",
+            "gender": "female",
+            "homeworld": {
+              "name": "Kamino"
+            }
+          },
+          {
+            "name": "Jocasta Nu",
+            "gender": "female",
+            "homeworld": {
+              "name": "Coruscant"
+            }
+          },
+          {
+            "name": "R4-P17",
+            "gender": "female",
+            "homeworld": {
+              "name": "unknown"
+            }
+          },
+          {
+            "name": "Wat Tambor",
+            "gender": "male",
+            "homeworld": {
+              "name": "Skako"
+            }
+          },
+          {
+            "name": "San Hill",
+            "gender": "male",
+            "homeworld": {
+              "name": "Muunilinst"
+            }
+          },
+          {
+            "name": "Shaak Ti",
+            "gender": "female",
+            "homeworld": {
+              "name": "Shili"
+            }
+          },
+          {
+            "name": "Grievous",
+            "gender": "male",
+            "homeworld": {
+              "name": "Kalee"
+            }
+          },
+          {
+            "name": "Tarfful",
+            "gender": "male",
+            "homeworld": {
+              "name": "Kashyyyk"
+            }
+          },
+          {
+            "name": "Raymus Antilles",
+            "gender": "male",
+            "homeworld": {
+              "name": "Alderaan"
+            }
+          },
+          {
+            "name": "Sly Moore",
+            "gender": "female",
+            "homeworld": {
+              "name": "Umbara"
+            }
+          },
+          {
+            "name": "Tion Medon",
+            "gender": "male",
+            "homeworld": {
+              "name": "Utapau"
+            }
+          }
+        ]
+      }
+    }
+  }
