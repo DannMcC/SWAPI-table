@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, componentWillMount, onClick } from 'react'
 import logo from './logo.svg'
 import './App.css'
 import data from './data.json'
@@ -95,13 +95,46 @@ const allCharacters = data.data.allPeople.people
 
 const characters = allCharacters.map((x) => console.log('Name: ' + x.name + ' Gender: ' + x.gender + ' Homeworld: ' + x.homeworld.name))
 
-// const allMales = allCharacters.filter(x => x.gender !== "male")
+const allMales = allCharacters.filter(x => x.gender == "male")
 
 const allFemales = allCharacters.filter(x => x.gender == "female")
 
-console.log(allFemales)
+let visibleCharacters =[]
 
 class App extends Component {
+
+  constructor (props) {
+    super(props)
+    this.state = {
+      visibleCharacters: ''
+    }
+    this.displayFemale = this.displayFemale.bind(this)
+    this.displayMale = this.displayMale.bind(this)
+    this.displayAll = this.displayAll.bind(this)
+
+    //this.setState({visibleCharacters: allCharacters})
+  }
+
+  componentWillMount() {
+    console.log('Component Mounted');
+    this.setState({visibleCharacters: allCharacters})
+  }
+
+  displayFemale() {
+    this.setState({visibleCharacters: allFemales})
+  }
+
+  displayMale() {
+    this.setState({visibleCharacters: allMales})
+  }
+
+  displayAll() {
+    this.setState({visibleCharacters: allCharacters})
+  }
+
+  handleClick() {
+    console.log('clicked')
+  }
 
   render() {
     return (
@@ -111,11 +144,21 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro">
-        <table>
+        {/* <input type="radio" value="option1" checked={this.setState(allFemales)} /> */}
+        <button onClick={this.displayFemale}>Show only females</button>
+        <button onClick={this.displayMale}>Show only males</button>
+        <button onClick={this.displayAll}>Show all</button>
+
+        <table className='data-table'>
           <tbody>
-            {allCharacters.map((x) => {
+            <tr className='table-head'>
+              <td>Name</td>
+              <td>Gender</td>
+              <td>Homeworld</td>
+            </tr>
+            {this.state.visibleCharacters.map((x) => {
                 return (
-                  <tr>
+                <tr>
                   <td>{x.name}</td>
                   <td>{x.gender}</td>
                   <td>{x.homeworld.name}</td>
