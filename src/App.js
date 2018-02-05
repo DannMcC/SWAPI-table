@@ -93,11 +93,11 @@ import data from './data.json'
 
 const allCharacters = data.data.allPeople.people
 
-const characters = allCharacters.map((x) => console.log('Name: ' + x.name + ' Gender: ' + x.gender + ' Homeworld: ' + x.homeworld.name))
+// const characters = allCharacters.map((x) => console.log('Name: ' + x.name + ' Gender: ' + x.gender + ' Homeworld: ' + x.homeworld.name))
 
-const allMales = allCharacters.filter(x => x.gender == "male")
+const allMales = allCharacters.filter(x => x.gender === "male")
 
-const allFemales = allCharacters.filter(x => x.gender == "female")
+const allFemales = allCharacters.filter(x => x.gender === "female")
 
 let visibleCharacters =[]
 
@@ -106,11 +106,14 @@ class App extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      visibleCharacters: ''
+      visibleCharacters: '',
+      searchInput: ''
     }
     this.displayFemale = this.displayFemale.bind(this)
     this.displayMale = this.displayMale.bind(this)
     this.displayAll = this.displayAll.bind(this)
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
 
     //this.setState({visibleCharacters: allCharacters})
   }
@@ -136,6 +139,22 @@ class App extends Component {
     console.log('clicked')
   }
 
+  // handleNewSearch (event) {
+  //   this.setState({searchInput: event.target.value})
+  // }
+
+  handleSubmit(event) {
+    alert('A name was submitted: ' + this.state.searchInput);
+    const searchResult = allCharacters.filter(x => (x.homeworld.name === this.state.searchInput) || (x.name === this.state.searchInput))
+    console.log(searchResult)
+    this.setState({visibleCharacters: searchResult})
+    event.preventDefault();
+  }
+
+  handleChange(event) {
+    this.setState({searchInput: event.target.value});
+  }
+
   render() {
     return (
       <div className="App">
@@ -143,12 +162,15 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <p className="App-intro">
         {/* <input type="radio" value="option1" checked={this.setState(allFemales)} /> */}
         <button onClick={this.displayFemale}>Show only females</button>
         <button onClick={this.displayMale}>Show only males</button>
         <button onClick={this.displayAll}>Show all</button>
-
+        <form onSubmit={this.handleSubmit}>
+        <input type="text" value={this.state.value} onChange={this.handleChange} />
+        <input type='submit'
+            value='Search' />
+        </form>
         <table className='data-table'>
           <tbody>
             <tr className='table-head'>
@@ -169,7 +191,6 @@ class App extends Component {
           </tbody>
         </table>
           To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
       </div>
     );
   }
