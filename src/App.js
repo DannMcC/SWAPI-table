@@ -100,10 +100,14 @@ the data into the project and have it work.
 
 //http://graphql.org/swapi-graphql/?query={allPeople{people{name gender}}}
 
+
+
 const allCharacters = data.data.allPeople.people
+// First I take the data and break it up into an array of objects
 
 class App extends Component {
 
+// The state consists of the characters that will be visible, and any search input
   constructor (props) {
     super(props)
     this.state = {
@@ -115,15 +119,21 @@ class App extends Component {
     this.displayMale = this.displayMale.bind(this)
     this.displayAll = this.displayAll.bind(this)
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
 
   }
-
+// when the page loads, visibleCharacters is set to allCharacters 
   componentWillMount() {
     this.setState({visibleCharacters: allCharacters})
-    console.log(allCharacters)
   }
+/* displayFemale and displayMale are called when there respective buttons are pressed.
+They both change the state of visibleCharacters to either males or females. In rectrospect,
+I could have combined  these and displayAll into a single function that gets passed either 'male' or
+'female' or 'all.'
 
+I use filter to remove all objects were Object.gender is not either male or female
+
+*/
   displayFemale() {
     const allFemales = allCharacters.filter(x => x.gender === "female")
     this.setState({visibleCharacters: allFemales})
@@ -137,15 +147,29 @@ class App extends Component {
   displayAll() {
     this.setState({visibleCharacters: allCharacters})
   }
+/* 
+handleChange changes the state of 'searchInput' to whatever is entered into the search bar
+as it is entered
+*/
+  handleChange(event) {
+    this.setState({searchInput: event.target.value});
+  }
 
-  handleSubmit(event) {
+/*
+  handleSearch is binded to the 'search' button, and when it runs it it is pressed.
+  It changes visibleCharacters to be all objects where Object.name or Object.homeworld.name 
+  is the same as the search.
+
+  An issue with doing it this way would be that if a characters name is the same as the planet they
+  are from, but I don't think it was the case here. Also it's case sensitive.
+
+  It would probably be better to use a regex that finds a string that contains the search. That way 'tatoo'
+  would return 'Tatooine' as well as a hypothetical character named Tatoog Shriek
+*/
+  handleSearch(event) {
     const searchResult = allCharacters.filter(x => (x.homeworld.name === this.state.searchInput) || (x.name === this.state.searchInput))
     this.setState({visibleCharacters: searchResult})
     event.preventDefault();
-  }
-
-  handleChange(event) {
-    this.setState({searchInput: event.target.value});
   }
 
   render() {
@@ -159,11 +183,10 @@ class App extends Component {
           <button onClick={this.displayFemale}>Show only females</button>
           <button onClick={this.displayMale}>Show only males</button>
           <button onClick={this.displayAll}>Show all</button>
-          <form onSubmit={this.handleSubmit}>
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
-          <input type='submit'
-              value='Search' />
-        </form>
+          <form onSubmit={this.handleSearch}>
+            <input type="text" value={this.state.value} onChange={this.handleChange} />
+            <input type='submit' value='Search' />
+          </form>
         </div>
         <table className='data-table'>
           <tbody>
@@ -172,6 +195,9 @@ class App extends Component {
               <td>Gender</td>
               <td>Homeworld</td>
             </tr>
+            {/* 
+              This maps through 'visibleCharacter' and returns a row for each object in the array
+            */}
             {this.state.visibleCharacters.map((x) => {
                 return (
                 <tr>
