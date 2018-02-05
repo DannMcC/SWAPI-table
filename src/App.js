@@ -16,7 +16,6 @@ import data from './data.json'
 
 // const searchResult = allCharacters.filter(x => (x.homeworld !== foo) && (x.name !== foo))
 
-
 // console.log(data.data.allPeople.people)
 
 // console.log(allCharacters)
@@ -92,14 +91,8 @@ import data from './data.json'
 //http://graphql.org/swapi-graphql/?query={allPeople{people{name gender}}}
 
 const allCharacters = data.data.allPeople.people
-
-// const characters = allCharacters.map((x) => console.log('Name: ' + x.name + ' Gender: ' + x.gender + ' Homeworld: ' + x.homeworld.name))
-
 const allMales = allCharacters.filter(x => x.gender === "male")
-
 const allFemales = allCharacters.filter(x => x.gender === "female")
-
-let visibleCharacters =[]
 
 class App extends Component {
 
@@ -109,17 +102,16 @@ class App extends Component {
       visibleCharacters: '',
       searchInput: ''
     }
+
     this.displayFemale = this.displayFemale.bind(this)
     this.displayMale = this.displayMale.bind(this)
     this.displayAll = this.displayAll.bind(this)
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
 
-    //this.setState({visibleCharacters: allCharacters})
   }
 
   componentWillMount() {
-    console.log('Component Mounted');
     this.setState({visibleCharacters: allCharacters})
   }
 
@@ -135,18 +127,8 @@ class App extends Component {
     this.setState({visibleCharacters: allCharacters})
   }
 
-  handleClick() {
-    console.log('clicked')
-  }
-
-  // handleNewSearch (event) {
-  //   this.setState({searchInput: event.target.value})
-  // }
-
   handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.searchInput);
     const searchResult = allCharacters.filter(x => (x.homeworld.name === this.state.searchInput) || (x.name === this.state.searchInput))
-    console.log(searchResult)
     this.setState({visibleCharacters: searchResult})
     event.preventDefault();
   }
@@ -162,7 +144,6 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        {/* <input type="radio" value="option1" checked={this.setState(allFemales)} /> */}
         <button onClick={this.displayFemale}>Show only females</button>
         <button onClick={this.displayMale}>Show only males</button>
         <button onClick={this.displayAll}>Show all</button>
